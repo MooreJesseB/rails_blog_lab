@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ .spacer {
+ 	height: 75px;
+ }
+
+ .button-list {
+ 	list-style-position: inline;
+ }
