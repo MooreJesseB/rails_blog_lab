@@ -1,0 +1,11 @@
+<div>
+	<h3>Write new blog post:</h3></br>
+	<form action="/posts" method="post">
+		<input type="text" name="post[title]" placeholder="Title"></br>
+		<input type="text" name="post[author]" placeholder="Author's name"></br>
+		<textarea type="text" name="post[body]" placeholder="Write something..."></textarea></br>
+		<input type="text" name="post[tags]" placeholder="Tags"></br>
+		<%= token_tag form_authenticity_token %>
+		<button>Submit</button>
+	</form>
+</div>

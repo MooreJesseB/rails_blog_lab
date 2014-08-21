@@ -1,0 +1,14 @@
+<div>
+	<h2><%= @post[:post].title %></h2>
+	<p>Author: <%= @post[:post].author %></p>
+	<p><%= @post[:post].body %></p>
+	<p>Tags: 
+	<% @post[:tags].each do |tag| %>
+		<span> </span><%= tag.name %>,
+	<% end %>
+	</p></br>
+	<form action="/" method="get">
+		<button>Home</button>
+	</form>
+
+</div>
