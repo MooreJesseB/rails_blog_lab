@@ -1,29 +1,30 @@
-<div class="container">
-    <ul>
-      <li class="button-list">
-        <form action="/posts/new" method="get">
-          <button>Create new post</button>
-        </form>
-      </li>
-      </li>
-        <form action="/tags" method="get">
-          <button>View all tags</button>
-        </form>
-      </li>
-    </ul>
-    <% @posts.each do |post| %>
-    <div class="blog-post">
-      <h2 class="blog-post-title"><%= post[:post].title %></h2>
-      <p class="blog-post-meta">By: <%= post[:post].author %></p>
-      
-      <p><%= post[:post].body %></p>
-      <p>Tags: 
-        <% post[:tags].each do |tag| %>
-          <%= tag.name %><span> </span>
-        <% end %>
-      </p></br>
-      <form action="/posts/<%= post[:post].id %>" method="get">
-        <button>View this post</button>
-      </form>
+
+<ul>
+  <li class="button-list">
+    <form action="/posts/new" method="get">
+      <button class="btn">Create new post</button>
+    </form>
+  </li>
+  <br>
+  </li>
+    <form action="/tags" method="get">
+      <button class="btn">View all tags</button>
+    </form>
+  </li>
+</ul>
+<% @posts.each do |post| %>
+<div class="blog-post">
+  <h2 class="blog-post-title"><%= post[:post].title %></h2>
+  <p class="blog-post-meta">By: <%= post[:post].author %></p>
+  
+  <p><%= post[:post].body %></p>
+  <p>Tags: 
+    <% post[:tags].each do |tag| %>
+      <%= tag.name %><span> </span>
     <% end %>
-</div>
+  </p></br>
+  <form action="/posts/<%= post[:post].id %>" method="get">
+    <button>View this post</button>
+  </form>
+<% end %>
+
