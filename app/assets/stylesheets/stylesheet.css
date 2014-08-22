@@ -5,3 +5,9 @@
  .button-list {
  	list-style: none;
  }
+
+ .text-center {
+ 	text-align: center;
+ 	margin: 0 auto;
+ 	display: block;
+ }

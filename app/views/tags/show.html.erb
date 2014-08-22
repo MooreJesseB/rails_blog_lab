@@ -1,9 +1,10 @@
 <div>
-	<h3><%= @tag[:tag].name %></h3>
-	<p>Associated posts</p><br>
-	<ul>
-		<% @tag[:posts].each do |post| %>
-			<a href="/posts/<%= post.id %>"><li>Title: <%= post.title %>  Author: <%= post.author %></li></a>
-		<% end %>
-	</ul>
+	<h2 class="text-center">Tag name:  <%= @tag[:tag].name %></h2><br>
+	<h4 class="text-center">Associated posts</h4><br>
+	
+	<% @tag[:posts].each do |post| %>
+		<p><a href="/posts/<%= post.id %>"><li class="text-center">Title: <%= post.title %></p> 
+		<p>Author: <%= post.author %></p><br>
+	<% end %>
+
 </div>

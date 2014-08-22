@@ -1,8 +1,13 @@
 <div>
-  <h3>Tags:</h3>
-  <ul>
+  <h3 class="text-center">Tags:</h3><br><br>
+  	<% counter = 0 %>
+  	<p>
     <% @tags.each do |tag| %>
-      <li><a href="/tags/<%= tag.id %>"><button><%= tag.name %></button></a></li>
+		<% if counter % 5 == 0 %>
+			</p><p>
+		<% end %>
+      <a href="/tags/<%= tag.id %>"><button class="text-center"><%= tag.name %></button></a>
     <% end %>
-  </ul>
+    </p>
+    
 </div>

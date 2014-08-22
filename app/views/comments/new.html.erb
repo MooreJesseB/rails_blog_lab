@@ -1,0 +1,10 @@
+<!-- new.html.erb -->
+
+<div class="form-group">
+	<h3>Write new comment:</h3></br>
+	<%= form_for([@post, @comment]) do |f| %>
+		<%= f.text_field :title, class: "form-control", placeholder: "Title"%>
+		<%= f.text_area :body, class: "form-control", placeholder: "Write comment here...", rows: 5 %>
+		<%= f.submit "Add comment", class: "form-control" %>
+	<% end %>
+</div>

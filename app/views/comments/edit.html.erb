@@ -1,0 +1,12 @@
+<!-- edit.html.erb -->
+
+<div>
+	<h3>Edit comment:</h3></br>
+	<div class="form-group">
+		<%= form_for ([@post, @comment]) do |f| %>
+			<%= f.text_field :title, class: "form-control" %>
+			<%= f.text_area :body, class: "form-control", rows: 5 %>
+			<%= f.submit "Save changes", class: "form-control" %>
+		<% end %>
+	</div>
+</div>

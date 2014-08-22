@@ -1,0 +1,9 @@
+<div class="form-group">
+	<h3>Edit post:</h3></br>
+	<%= form_for @post do |f| %>
+		<%= f.text_field :title, class: "form-control"%>
+		<%= f.text_field :author, class: "form-control"%>
+		<%= f.text_area :body, class: "form-control", rows: 5%>
+		<%= f.submit "Save changes", class: "form-control btn-default btn" %>
+	<% end %>
+</div>

@@ -1,14 +1,25 @@
 <div>
-	<h2><%= @post[:post].title %></h2>
-	<p>Author: <%= @post[:post].author %></p>
-	<p><%= @post[:post].body %></p>
+	<h2 class="text-center"><%= @post.title %></h2><br>
+	<h4 class="text-center">Author: <%= @post.author %></h4><br><br>
+	<p><%= @post.body %></p>
 	<p>Tags: 
-	<% @post[:tags].each do |tag| %>
-		<span> </span><%= tag.name %>,
+	<% @post.tags.each do |tag| %>
+		<span> </span><%= tag.name %>
 	<% end %>
-	</p></br>
-	<form action="/" method="get">
-		<button>Home</button>
-	</form>
-
+	<p>Last updated: <%= @post.updated_at %></p>
+	</p><br>
+	<form action="/posts/<%= @post.id %>/edit" method="get">
+		<button class="btn text-center">Edit Post</button>
+	</form><br><br>
+	<h3 class="text-center">Comments:</h3><br>
+	<form action="/posts/<%= @post.id %>/comments/new" method="get">
+		<button class="btn text-center">Add comment</button>
+	</form><br><br><br>
+	<% @comments.each do |comment| %>
+		<h4 class="text-center"><%= comment.title %></h4>
+		<p><%= comment.body %></p>
+	<form action="/posts/<%= @post.id %>/comments/<%= comment.id %>">
+		<button class="btn text-center">View comment</button>
+	</form><br><br>
+	<% end %>
 </div>
